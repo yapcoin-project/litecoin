@@ -129,7 +129,8 @@ public:
         std::cout << std::string("Begin calculating Mainnet Genesis Block:\n");
         if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
             LogPrintf("Calculating Mainnet Genesis Block:\n");
-            arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
+            arith_uint256 hashTarget;
+            hashTarget.SetCompact(genesis.nBits);
             uint256 hash;
             genesis.nNonce = 0;
             // This will figure out a valid hash and Nonce if you're
