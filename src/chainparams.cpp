@@ -74,7 +74,7 @@ class CMainParams : public CChainParams {
 public:
     CMainParams() {
         strNetworkID = "main";
-        consensus.nSubsidyHalvingInterval = 840000;
+        consensus.nSubsidyHalvingInterval = 250000;
         consensus.BIP34Height = 0;
         consensus.BIP34Hash = uint256S("0");
         consensus.BIP65Height = 0;
@@ -118,7 +118,7 @@ public:
         nDefaultPort = 7333;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1518411600, 0, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1518411600, 0, 0x1e0ffff0, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
 
@@ -168,7 +168,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.emplace_back("seed-a.yapcoin.loshan.co.uk", true);
+//        vSeeds.emplace_back("seed-a.yapcoin.loshan.co.uk", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,48);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -243,7 +243,7 @@ public:
         nDefaultPort = 17332;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1518411600, 0, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1518411600, 0, 0x1e0ffff0, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x"));
         assert(genesis.hashMerkleRoot == uint256S("0x"));
@@ -251,7 +251,7 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("testnet-seed.yapcointools.com", true);
+//        vSeeds.emplace_back("testnet-seed.yapcointools.com", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
@@ -323,7 +323,7 @@ public:
         nDefaultPort = 17338;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1518411600, 0, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1518411600, 0, 0x207fffff, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x"));
         assert(genesis.hashMerkleRoot == uint256S("0x"));
