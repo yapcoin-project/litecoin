@@ -79,7 +79,7 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 250000;
         consensus.BIP34Height = 0;
-        consensus.BIP34Hash = uint256S("0");
+        consensus.BIP34Hash = uint256S("0xca83a9731c2b797de32bc0140535f6a5990410ef3dd05efb2f0fd579c3fc948b");
         consensus.BIP65Height = 0;
         consensus.BIP66Height = 0;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
@@ -107,69 +107,25 @@ public:
         consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000ba50a60f8b56c7fe0");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x29c8c00e1a5f446a6364a29633d3f1ee16428d87c8d3851a1c570be8170b04c2"); //1259849
+        consensus.defaultAssumeValid = uint256S("0xca83a9731c2b797de32bc0140535f6a5990410ef3dd05efb2f0fd579c3fc948b"); // genesis
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xb6;
-        pchMessageStart[3] = 0xdb;
+        pchMessageStart[0] = 0xdb;
+        pchMessageStart[1] = 0xb6;
+        pchMessageStart[2] = 0xc0;
+        pchMessageStart[3] = 0xfb;
         nDefaultPort = 7333;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1518411600, 0, 0x1e0ffff0, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1518411600, 1158140, 0x1e0ffff0, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
 
-
-
-        // calculate Genesis Block
-        // Reset genesis
-        consensus.hashGenesisBlock = uint256S("0x");
-        std::cout << std::string("Begin calculating Mainnet Genesis Block:\n");
-        if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
-            LogPrintf("Calculating Mainnet Genesis Block:\n");
-            arith_uint256 hashTarget;
-            hashTarget.SetCompact(genesis.nBits);
-            uint256 hash;
-            genesis.nNonce = 0;
-            // This will figure out a valid hash and Nonce if you're
-            // creating a different genesis block:
-            // uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
-            // hashTarget.SetCompact(genesis.nBits, &fNegative, &fOverflow).getuint256();
-            // while (genesis.GetHash() > hashTarget)
-            while (UintToArith256(genesis.GetPoWHash()) > hashTarget)
-            {
-                ++genesis.nNonce;
-                if (genesis.nNonce == 0)
-                {
-                    LogPrintf("NONCE WRAPPED, incrementing time");
-                    std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
-                    ++genesis.nTime;
-                }
-                if (genesis.nNonce % 10000 == 0)
-                {
-                    LogPrintf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
-                    // std::cout << strNetworkID << " nonce: " << genesis.nNonce << " time: " << genesis.nTime << " hash: " << genesis.GetHash().ToString().c_str() << "\n";
-                }
-            }
-            std::cout << "Mainnet ---\n";
-            std::cout << "  nonce: " << genesis.nNonce <<  "\n";
-            std::cout << "   time: " << genesis.nTime << "\n";
-            std::cout << "   hash: " << genesis.GetHash().ToString().c_str() << "\n";
-            std::cout << "   merklehash: "  << genesis.hashMerkleRoot.ToString().c_str() << "\n";
-            // Mainnet --- nonce: 296277 time: 1390095618 hash: 000000bdd771b14e5a031806292305e563956ce2584278de414d9965f6ab54b0
-        }
-        std::cout << std::string("Finished calculating Mainnet Genesis Block:\n");
-
-
-
-
-        assert(consensus.hashGenesisBlock == uint256S("0x"));
-        assert(genesis.hashMerkleRoot == uint256S("0x"));
+        assert(consensus.hashGenesisBlock == uint256S("0xca83a9731c2b797de32bc0140535f6a5990410ef3dd05efb2f0fd579c3fc948b"));
+        assert(genesis.hashMerkleRoot == uint256S("0x63d0b262000b82fe761e3207b014b417a91ae110e8d5d4147489cae026e4aac0"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
 //        vSeeds.emplace_back("seed-a.yapcoin.loshan.co.uk", true);
@@ -238,7 +194,7 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000364b0cbc3568");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xad8ff6c2f5580d2b50bd881e11312425ea84fa99f322bf132beb722f97971bba"); //153490
+        consensus.defaultAssumeValid = uint256S("0xca83a9731c2b797de32bc0140535f6a5990410ef3dd05efb2f0fd579c3fc948b"); // genesis
 
         pchMessageStart[0] = 0xfd;
         pchMessageStart[1] = 0xd2;
@@ -247,10 +203,10 @@ public:
         nDefaultPort = 17332;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1518411600, 0, 0x1e0ffff0, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1518411600, 1158140, 0x1e0ffff0, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x"));
-        assert(genesis.hashMerkleRoot == uint256S("0x"));
+        assert(consensus.hashGenesisBlock == uint256S("0xca83a9731c2b797de32bc0140535f6a5990410ef3dd05efb2f0fd579c3fc948b"));
+        assert(genesis.hashMerkleRoot == uint256S("0x63d0b262000b82fe761e3207b014b417a91ae110e8d5d4147489cae026e4aac0"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -327,10 +283,10 @@ public:
         nDefaultPort = 17338;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1518411600, 0, 0x207fffff, 1, 100 * COIN);
+        genesis = CreateGenesisBlock(1518411600, 1158140, 0x207fffff, 1, 100 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x"));
-        assert(genesis.hashMerkleRoot == uint256S("0x"));
+        assert(consensus.hashGenesisBlock == uint256S("0xca83a9731c2b797de32bc0140535f6a5990410ef3dd05efb2f0fd579c3fc948b"));
+        assert(genesis.hashMerkleRoot == uint256S("0x63d0b262000b82fe761e3207b014b417a91ae110e8d5d4147489cae026e4aac0"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
         vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
