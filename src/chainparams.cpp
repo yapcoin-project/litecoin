@@ -101,10 +101,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1517356801; // January 31st, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000ba50a60f8b56c7fe0");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000300030");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xca83a9731c2b797de32bc0140535f6a5990410ef3dd05efb2f0fd579c3fc948b"); // genesis
+        consensus.defaultAssumeValid = uint256S("0x0b1379800d7242332bf8ec4c2a9c62323fe05d74dcd3db578bbf198f0df78eaa"); // 2
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -188,10 +188,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1517356801; // January 31st, 2018
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000364b0cbc3568");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000300030");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0xca83a9731c2b797de32bc0140535f6a5990410ef3dd05efb2f0fd579c3fc948b"); // genesis
+        consensus.defaultAssumeValid = uint256S("0x0b1379800d7242332bf8ec4c2a9c62323fe05d74dcd3db578bbf198f0df78eaa"); // 2
 
         pchMessageStart[0] = 0xfd;
         pchMessageStart[1] = 0xd2;
