@@ -125,7 +125,7 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x63d0b262000b82fe761e3207b014b417a91ae110e8d5d4147489cae026e4aac0"));
 
         // Note that of those with the service bits flag, most only support a subset of possible options
-        vSeeds.emplace_back("144.217.243.185", true);
+        vSeeds.emplace_back("yapcoin.co", true);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,48);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
