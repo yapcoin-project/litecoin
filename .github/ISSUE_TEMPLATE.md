@@ -4,7 +4,7 @@ This issue tracker is only for technical issues related to yapcoin-core.
 
 General yapcoin questions and/or support requests and are best directed to the [yapcointalk.io forums](https://yapcointalk.io/).
 
-For reporting security issues, please contact the Yapcoin developers on the #yapcoin-dev Freenode IRC channel or alternatively you can email us at contact@yapcoin.org.
+For reporting security issues, please contact the Yapcoin developers on the #yapcoin-dev Freenode IRC channel or alternatively you can email us at contact@yapcoin.co.
 
 ### Describe the issue
 

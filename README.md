@@ -3,7 +3,7 @@ Yapcoin Core integration/staging tree
 
 [![Build Status](https://travis-ci.org/yapcoin-project/yapcoin.svg?branch=master)](https://travis-ci.org/yapcoin-project/yapcoin)
 
-https://yapcoin.org
+https://yapcoin.co
 
 What is Yapcoin?
 ----------------
@@ -15,7 +15,7 @@ out collectively by the network. Yapcoin Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Yapcoin Core software, see [https://yapcoin.org](https://yapcoin.org).
+the Yapcoin Core software, see [https://yapcoin.co](https://yapcoin.co).
 
 License
 -------

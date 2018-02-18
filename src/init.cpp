@@ -526,7 +526,7 @@ std::string HelpMessage(HelpMessageMode mode)
 std::string LicenseInfo()
 {
     const std::string URL_SOURCE_CODE = "<https://github.com/yapcoin-project/yapcoin>";
-    const std::string URL_WEBSITE = "<https://yapcoin.org>";
+    const std::string URL_WEBSITE = "<https://yapcoin.co>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2011, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
